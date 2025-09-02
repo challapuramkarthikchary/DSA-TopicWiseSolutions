@@ -1,0 +1,53 @@
+283. Move Zeroes
+link : https://leetcode.com/problems/move-zeroes/description/
+_____________________________________________________________________
+// solution - 1
+class Solution {
+    public void moveZeroes(int[] nums) {
+        
+        int zeroindex=-1;
+
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==0){
+                zeroindex=i;
+                break;
+            }
+        }
+
+        if(zeroindex==-1){
+            return;
+        }
+
+        for(int j=zeroindex+1;j<nums.length;j++){
+            if(nums[j]!=0){
+                int temp=nums[j];
+                nums[j] =nums[zeroindex];
+                nums[zeroindex]=temp;
+                zeroindex++;
+            }
+        }
+    }
+}
+
+___________________________________________________________________________________________
+
+solution -2
+class Solution {
+    public void moveZeroes(int[] nums) {
+        
+        int insertpos=0;
+
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=0){
+                nums[insertpos++]=nums[i];
+            }
+        }
+
+        while(insertpos<nums.length){
+            nums[insertpos++]=0;
+        }
+
+
+
+    }
+}
