@@ -1,0 +1,40 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+
+		int arr[] = {1};
+
+		//checking if the array has only one Element
+		if(arr.length<2){
+			System.out.println("Array Must Have At Least Two Elements");
+			return;
+		}
+
+		int first_Largest = arr[0];
+		int second_largest = -100000;
+
+		for(int i=0; i<arr.length; i++){
+
+			if(first_Largest < arr[i]){
+				second_largest = first_Largest;
+				first_Largest = arr[i];
+			}else if(second_largest < arr[i] && arr[i] != first_Largest){
+				second_largest = arr[i];
+			}
+
+		}
+
+		if(second_largest==-100000){
+			System.out.println("second_largest is not present in the array");
+		}else{
+			System.out.println(second_largest);
+		}
+
+
+	}
+}
