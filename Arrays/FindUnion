@@ -1,0 +1,44 @@
+//Find Union
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+	 public static int[] unionArray(int[] nums1, int[] nums2) {
+        
+        HashSet<Integer> union =new HashSet<>();
+
+        for(int i=0;i<nums1.length;i++){
+            union.add(nums1[i]);
+        }
+
+        for(int i=0;i<nums2.length;i++){
+            union.add(nums2[i]);
+        }
+
+        int ans[]=new int[union.size()];
+
+        int i=0;
+        for(Integer it : union){
+            ans[i++]=it;
+        }
+        return ans;
+        
+    }
+
+	public static void main (String[] args) throws java.lang.Exception
+	{
+
+		int nums1[]={1,2,3,4,5};
+		int nums2[]={3,4,5,6};
+		
+
+		int ansarray[] = unionArray(nums1,nums2);
+
+		for(int i=0;i<ansarray.length;i++){
+			System.out.print(ansarray[i]+" ");
+		}
+
+	}
+}
