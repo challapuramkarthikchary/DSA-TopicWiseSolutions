@@ -1,0 +1,26 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+    
+    /* we can solve this question in three ways 
+    one sort and use two pointers 
+    second use the frequency map
+    third one os moore's algorithm
+    */
+    
+        int count=0;
+        int num =-100;
+        for(int i=0;i<nums.length;i++){
+            
+            if(count==0){
+                count++;
+                num=nums[i];
+            }else if(nums[i]==num){
+                count++;
+            }else{
+                count--;
+            }
+        }
+        return num;
+
+    }
+}
